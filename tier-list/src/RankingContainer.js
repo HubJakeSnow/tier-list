@@ -2,7 +2,7 @@ import React from 'react'
 
 function RankingContainer() {
   return (
-    <div className='ranking-container'>Ranking Container</div>
+    <div className='ranking-container'>Ranking Container!</div>
   )
 }
 

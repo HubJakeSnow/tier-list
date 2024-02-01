@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaCog } from 'react-icons/fa';
+import React from 'react'
+import { FaCog } from 'react-icons/fa'
 
 const Row = ({ tier, tierColor, onEdit }) => {
   return (
@@ -13,4 +13,4 @@ const Row = ({ tier, tierColor, onEdit }) => {
   );
 };
 
-export default Row;
+export default Row
