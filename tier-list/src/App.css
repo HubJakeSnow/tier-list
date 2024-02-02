@@ -54,7 +54,7 @@
 
 svg.icon:hover {
     cursor: pointer;
-    color: #333333;
+    color: lightgray;
 }
 
 /* Buttons */
@@ -86,6 +86,6 @@ svg.icon:hover {
     margin: 1rem;
 }
 
-.ranking-container img {
-    cursor: pointer;
+.ranking-images {
+    cursor: grab;
 }

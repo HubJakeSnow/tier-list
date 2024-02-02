@@ -33,7 +33,6 @@ function App() {
         <button className='btn add-row'>Add Row</button>
         <button className='btn add-column'>Add Column</button>
       </div>
-      {/* Pass clubData as a prop to RankingContainer */}
       <RankingContainer clubData={clubData} />
     </>
   );
