@@ -3,23 +3,15 @@ import { FaCog } from 'react-icons/fa'
 
 const Row = ({ tier, tierColor, onEdit }) => {
   const draggingOver=(e)=> {
-    e.preventDefault()
-    console.log("Dragging over now")
+    e.preventDefault();
   }
 
   const dragDropped = (e) => {
     e.preventDefault();
-  
     let transferedClubId = e.dataTransfer.getData('clubId');
-    console.log(`You have dropped ${transferedClubId} in ${tier} tier`);
-  
-    // Get the image element based on the dragged clubId
     const droppedImage = document.getElementById(transferedClubId);
-  
-    // Append the image to the image-container in this row
     e.target.appendChild(droppedImage);
   };
-  
 
   return (
     <div className="row-container">
