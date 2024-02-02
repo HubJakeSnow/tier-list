@@ -89,3 +89,66 @@ svg.icon:hover {
 .ranking-images {
     cursor: grab;
 }
+
+/* Forms */
+form {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid white;
+    padding: 1rem;
+    margin: 1rem 5rem;
+}
+
+#form-title {
+    text-align: center;
+    margin: 1rem;
+}
+
+#color-selector {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    margin: 1rem 1rem 0 1rem;
+}
+
+textarea {
+    margin: 0 1rem;
+    padding: 5px;
+    min-height: 50px;
+    font-size: 16px;
+    color: white;
+}
+
+.form-button-container {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-button {
+    height: 32px;
+    color: black;
+    margin: 1rem;
+}
+
+#submit-form {
+    background-color: green;
+}
+
+#submit-form:hover {
+    background-color: lightgreen;
+}
+
+#cancel-form {
+    background-color: red;
+    margin-left: auto;
+}
+
+#cancel-form:hover {
+    background-color: lightcoral;
+}
