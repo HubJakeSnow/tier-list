@@ -101,12 +101,12 @@ form {
     margin: 1rem 5rem;
 }
 
-#form-title {
+.form-title {
     text-align: center;
     margin: 1rem;
 }
 
-#color-selector {
+.color-selector {
     margin: 1rem;
     display: flex;
     justify-content: center;
@@ -151,4 +151,12 @@ textarea {
 
 #cancel-form:hover {
     background-color: lightcoral;
+}
+
+#modal {
+    position: absolute;
+    right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
 }

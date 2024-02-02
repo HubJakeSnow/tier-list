@@ -4,11 +4,13 @@ import TierList from './TierList'
 import RankingContainer from './RankingContainer'
 import RowForm from './RowForm'
 import ColumnForm from './ColumnForm'
+import Modal from './Modal'
 
 function App() {
   const [clubData, setClubData] = useState([]);
   const [isRowFormVisible, setIsRowFormVisible] = useState(false);
   const [isColumnFormVisible, setIsColumnFormVisible] = useState(false);
+  const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,31 +31,48 @@ function App() {
     fetchData();
   }, []);
 
-  function toggleRowFormVisibility() {
-    setIsRowFormVisible((prevVisibility) => !prevVisibility);
-    setIsColumnFormVisible(false); // Hide the ColumnForm when RowForm is toggled
-  }
+  const toggleRowFormVisibility = () => {
+    setIsRowFormVisible(!isRowFormVisible);
+    setIsColumnFormVisible(false);
+    setIsEditTierFormVisible(false);
+  };
 
-  function toggleColumnFormVisibility() {
-    setIsColumnFormVisible((prevVisibility) => !prevVisibility);
-    setIsRowFormVisible(false); // Hide the RowForm when ColumnForm is toggled
-  }
+  const toggleColumnFormVisibility = () => {
+    setIsColumnFormVisible(!isColumnFormVisible);
+    setIsRowFormVisible(false);
+    setIsEditTierFormVisible(false);
+  };
+
+  const toggleEditTierFormVisibility = () => {
+    setIsEditTierFormVisible(!isEditTierFormVisible);
+    setIsRowFormVisible(false);
+    setIsColumnFormVisible(false);
+  };
 
   return (
     <>
       <h1 className='title'>Ultimate Tier List</h1>
+      {isEditTierFormVisible && <Modal />}
       <TierList />
       <div className='buttons-container'>
-        <button onClick={toggleRowFormVisibility} className='btn add-row'>
+        <button
+          onClick={toggleRowFormVisibility}
+          className='btn add-row'
+          disabled={isEditTierFormVisible}
+        >
           Add Row
         </button>
-        <button onClick={toggleColumnFormVisibility} className='btn add-column'>
+        <button
+          onClick={toggleColumnFormVisibility}
+          className='btn add-column'
+          disabled={isEditTierFormVisible}
+        >
           Add Column
         </button>
       </div>
-      <RankingContainer clubData={clubData} />
       {isRowFormVisible && <RowForm />}
       {isColumnFormVisible && <ColumnForm />}
+      <RankingContainer clubData={clubData} />
     </>
   );
 }
