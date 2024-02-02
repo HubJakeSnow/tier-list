@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <h1>Ultimate Tier List</h1>
+      <h1 className='title'>Ultimate Tier List</h1>
       <TierList />
       <div className='buttons-container'>
         <button className='btn add-row'>Add Row</button>

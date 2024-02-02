@@ -3,19 +3,26 @@
     box-sizing: border-box;
     font-family: 'sans-serif', Arial, Helvetica;
     background-color: #333333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Title */
+.title {
+    margin: 2rem;
+    text-align: center;
+    color: white;
 }
 
 /* Tier List */
 .tier-list {
-    /* background-color: blue;
-    padding: 10px; */
+    margin: 1rem;
 }
 
 /* Rows */
 .row-container {
     border: 1px solid black;
     display: flex;
-    height: 80px;
 }
 
 .tier-box {
@@ -31,6 +38,7 @@
 .image-container {
     background-color: #202020;
     flex: 1;
+    height: 80px;
 }
 
 .icon-box {
@@ -53,7 +61,7 @@ svg.icon:hover {
 .buttons-container {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 1rem;
 }
 
 .btn {
@@ -75,6 +83,9 @@ svg.icon:hover {
 
 /* Ranking Container */
 .ranking-container {
-    border: 3px solid black;
-    color: white;
+    margin: 1rem;
+}
+
+.ranking-container img {
+    cursor: pointer;
 }

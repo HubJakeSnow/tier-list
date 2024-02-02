@@ -3,8 +3,8 @@ import Row from './Row'
 import './App.css'
 
 function TierList() {
-    const [tierData, setTierData] = useState(['S', 'A', 'B', 'C']);
-    const [tierColor, setTierColor] = useState(['Red', 'Orange', 'Yellow', 'Green'])
+    const [tierData, setTierData] = useState(['S', 'A', 'B', 'C', 'D']);
+    const [tierColor, setTierColor] = useState(['Red', 'Orange', 'Yellow', 'Green', 'Blue'])
 
     function handleEdit(index) {
         console.log(`${tierData[index]} Tier Clicked!`);
