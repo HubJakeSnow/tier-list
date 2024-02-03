@@ -3,7 +3,13 @@ import React from 'react'
 function RowForm() {
   return (
     <form add-row-form>
-      <h4 className='form-title'>Add A New Row</h4>
+      <div className='top-row-container'>
+        <h4 className='form-title'>Add A Row</h4>
+        <div className='close-form-button'>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+      </div>
       <div className='color-selector'>Red, Orange, Yellow, Green or Blue</div>
       <label>Tier's Name</label>
       <textarea></textarea>

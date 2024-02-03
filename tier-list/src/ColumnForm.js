@@ -3,7 +3,13 @@ import React from 'react'
 function ColumnForm() {
   return (
     <form add-column-form>
-      <h4 className='form-title'>Add A New Column</h4>
+      <div className='top-row-container'>
+        <h4 className='form-title'>Add A Column</h4>
+        <div className='close-form-button'>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+      </div>
       <div className='color-selector'>Red, Orange, Yellow, Green or Blue</div>
       <label>Tier's Name</label>
       <textarea></textarea>
