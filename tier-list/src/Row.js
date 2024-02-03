@@ -5,18 +5,18 @@ import Modal from './Modal'
 const Row = ({ tier, tierColor }) => {
   const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
 
-  const draggingOver = (e) => {
+  function draggingOver(e) {
     e.preventDefault();
   };
 
-  const dragDropped = (e) => {
+  function dragDropped(e) {
     e.preventDefault();
     let transferedClubId = e.dataTransfer.getData('clubId');
     const droppedImage = document.getElementById(transferedClubId);
     e.target.appendChild(droppedImage);
   };
 
-  const toggleEditTierFormVisibility = () => {
+  function toggleEditTierFormVisibility() {
     setIsEditTierFormVisible(!isEditTierFormVisible);
   };
 

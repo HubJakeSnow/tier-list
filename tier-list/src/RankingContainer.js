@@ -1,7 +1,7 @@
 import React from 'react'
 
 function RankingContainer({ clubData }) {
-  const dragStarted=(e,index)=>{
+  function dragStarted(e,index) {
     e.dataTransfer.setData("clubId", index)
   }
 
