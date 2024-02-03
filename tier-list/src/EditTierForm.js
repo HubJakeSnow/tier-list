@@ -3,7 +3,7 @@ import Row from './Row';
 
 function EditTierForm() {
   return (
-    <form edit-row-form>
+    <form id='edit-row-form'>
       <div className='top-row-container'>
         <h4 className='form-title'>Edit Row</h4>
         <div className='close-form-button'>

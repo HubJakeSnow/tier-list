@@ -2,7 +2,7 @@ import React from 'react'
 
 function RowForm() {
   return (
-    <form add-row-form>
+    <form id='add-row-form'>
       <div className='top-row-container'>
         <h4 className='form-title'>Add A Row</h4>
         <div className='close-form-button'>

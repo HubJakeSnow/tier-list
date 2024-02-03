@@ -2,7 +2,7 @@ import React from 'react'
 
 function ColumnForm() {
   return (
-    <form add-column-form>
+    <form id='add-column-form'>
       <div className='top-row-container'>
         <h4 className='form-title'>Add A Column</h4>
         <div className='close-form-button'>
