@@ -88,6 +88,7 @@ svg.icon:hover {
 
 .ranking-images {
     cursor: grab;
+    background-color: transparent;
 }
 
 /* Forms */
