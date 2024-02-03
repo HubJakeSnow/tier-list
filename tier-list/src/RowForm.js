@@ -1,11 +1,11 @@
 import React from 'react'
 
-function RowForm() {
+function RowForm(props) {
   return (
     <form id='add-row-form'>
       <div className='top-row-container'>
         <h4 className='form-title'>Add A Row</h4>
-        <div className='close-form-button'>
+        <div className='close-form-button' onClick={props.toggleVisibility}>
           <div className="line"></div>
           <div className="line"></div>
         </div>
@@ -17,7 +17,7 @@ function RowForm() {
         <button className='form-button btn' id='submit-form'>
           Add Row
         </button>
-        <button className='form-button btn' id='cancel-form'>
+        <button className='form-button btn' id='cancel-form' onClick={props.toggleVisibility}>
           Cancel
         </button>
       </div>

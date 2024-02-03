@@ -52,26 +52,24 @@ function App() {
   return (
     <>
       <h1 className='title'>Ultimate Tier List</h1>
-      {isEditTierFormVisible && <Modal />}
+      {isEditTierFormVisible && <Modal toggleVisibility={toggleEditTierFormVisibility} />}
       <TierList />
       <div className='buttons-container'>
         <button
           onClick={toggleRowFormVisibility}
           className='btn add-row'
-          disabled={isEditTierFormVisible}
         >
           Add Row
         </button>
         <button
           onClick={toggleColumnFormVisibility}
           className='btn add-column'
-          disabled={isEditTierFormVisible}
         >
           Add Column
         </button>
       </div>
-      {isRowFormVisible && <RowForm />}
-      {isColumnFormVisible && <ColumnForm />}
+      {isRowFormVisible && <RowForm toggleVisibility={toggleRowFormVisibility} />}
+      {isColumnFormVisible && <ColumnForm toggleVisibility={toggleColumnFormVisibility} />}
       <RankingContainer clubData={clubData} />
     </>
   );

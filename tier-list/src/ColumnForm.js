@@ -1,11 +1,11 @@
 import React from 'react'
 
-function ColumnForm() {
+function ColumnForm(props) {
   return (
     <form id='add-column-form'>
       <div className='top-row-container'>
         <h4 className='form-title'>Add A Column</h4>
-        <div className='close-form-button'>
+        <div className='close-form-button' onClick={props.toggleVisibility}>
           <div className="line"></div>
           <div className="line"></div>
         </div>
@@ -17,7 +17,7 @@ function ColumnForm() {
         <button className='form-button btn' id='submit-form'>
           Add Column
         </button>
-        <button className='form-button btn' id='cancel-form'>
+        <button className='form-button btn' id='cancel-form' onClick={props.toggleVisibility}>
           Cancel
         </button>
       </div>
