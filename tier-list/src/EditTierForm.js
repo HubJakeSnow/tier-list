@@ -1,12 +1,12 @@
 import React from 'react'
 import Row from './Row';
 
-function EditTierForm() {
+function EditTierForm(props) {
   return (
     <form id='edit-row-form'>
       <div className='top-row-container'>
         <h4 className='form-title'>Edit Row</h4>
-        <div className='close-form-button'>
+        <div className='close-form-button' onClick={props.toggleVisibility}>
           <div className="line"></div>
           <div className="line"></div>
         </div>

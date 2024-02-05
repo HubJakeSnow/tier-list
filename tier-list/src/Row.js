@@ -33,7 +33,8 @@ const Row = ({ tier, tierColor }) => {
       <div className="icon-box" onClick={toggleEditTierFormVisibility}>
         <FaCog className="icon" style={{ backgroundColor: 'black' }} size={40} />
       </div>
-      {isEditTierFormVisible && <Modal />}
+      {isEditTierFormVisible && <Modal toggleVisibility={toggleEditTierFormVisibility} />}
+
     </div>
   );
 };
