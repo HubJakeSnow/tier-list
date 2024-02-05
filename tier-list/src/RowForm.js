@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function RowForm(props) {
+  const [newTierName, setNewTierName] = useState('');
+
   function submitForm(e) {
     if (e) {
       e.preventDefault();
     }
-    console.log("New row added!");
-    
+    console.log(`New row added, named: ${newTierName}`);
+    // Additional logic for handling the new tier name
   }
 
   return (
@@ -20,7 +22,7 @@ function RowForm(props) {
       </div>
       <div className='color-selector'>Red, Orange, Yellow, Green or Blue</div>
       <label>Tier's Name</label>
-      <textarea></textarea>
+      <textarea value={newTierName} onChange={(e) => setNewTierName(e.target.value)}></textarea>
       <div className='form-button-container'>
         <button className='form-button btn' id='submit-form' onClick={(e) => { submitForm(e); props.toggleVisibility(); }}>
           Add Row
