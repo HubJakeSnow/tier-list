@@ -1,6 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 function RowForm(props) {
+  function submitForm(e) {
+    if (e) {
+      e.preventDefault();
+    }
+    console.log("New row added!");
+    
+  }
+
   return (
     <form id='add-row-form'>
       <div className='top-row-container'>
@@ -14,7 +22,7 @@ function RowForm(props) {
       <label>Tier's Name</label>
       <textarea></textarea>
       <div className='form-button-container'>
-        <button className='form-button btn' id='submit-form'>
+        <button className='form-button btn' id='submit-form' onClick={(e) => { submitForm(e); props.toggleVisibility(); }}>
           Add Row
         </button>
         <button className='form-button btn' id='cancel-form' onClick={props.toggleVisibility}>
