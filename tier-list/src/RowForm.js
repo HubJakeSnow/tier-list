@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 function RowForm(props) {
   const [newTierName, setNewTierName] = useState('');
+  const [newTierColor, setNewTierColor] = useState('');
 
   function submitForm(e) {
     e.preventDefault();
     props.addNewTier(newTierName);
     setNewTierName('');
+    console.log(newTierColor);
+  }
+
+  function handleColorSelect(color, event) {
+    setNewTierColor(color);
+    console.log(color);
+    
+    const spans = document.querySelectorAll('#color-selector span');
+    spans.forEach(span => {
+      span.classList.remove('selected');
+    });
+  
+    event.target.classList.add('selected');
   }
 
   return (
@@ -19,21 +33,21 @@ function RowForm(props) {
         </div>
       </div>
       <div id='color-selector'>
-        <span style={{ background: '#FF7F7F' }}></span>
-        <span style={{ background: '#FFBF7F' }}></span>
-        <span style={{ background: '#FFDF7F' }}></span>
-        <span style={{ background: '#FFFF7F' }}></span>
-        <span style={{ background: '#BFFF7F' }}></span>
-        <span style={{ background: '#7FFF7F' }}></span>
-        <span style={{ background: '#7FFFFF' }}></span>
-        <span style={{ background: '#7FBFFF' }}></span>
-        <span style={{ background: '#7F7FFF' }}></span>
-        <span style={{ background: '#FF7FFF' }}></span>
-        <span style={{ background: '#BF7FBF' }}></span>
-        <span style={{ background: '#3B3B3B' }}></span>
-        <span style={{ background: '#858585' }}></span>
-        <span style={{ background: '#CFCFCF' }}></span>
-        <span style={{ background: '#F7F7F7' }}></span>
+        <span style={{ background: '#FF7F7F' }} onClick={(e) => handleColorSelect('#FF7F7F', e)} ></span>
+        <span style={{ background: '#FFBF7F' }} onClick={(e) => handleColorSelect('#FFBF7F', e)} ></span>
+        <span style={{ background: '#FFDF7F' }} onClick={(e) => handleColorSelect('#FFDF7F', e)} ></span>
+        <span style={{ background: '#FFFF7F' }} onClick={(e) => handleColorSelect('#FFFF7F', e)} ></span>
+        <span style={{ background: '#BFFF7F' }} onClick={(e) => handleColorSelect('#BFFF7F', e)} ></span>
+        <span style={{ background: '#7FFF7F' }} onClick={(e) => handleColorSelect('#7FFF7F', e)} ></span>
+        <span style={{ background: '#7FFFFF' }} onClick={(e) => handleColorSelect('#7FFFFF', e)} ></span>
+        <span style={{ background: '#7FBFFF' }} onClick={(e) => handleColorSelect('#7FBFFF', e)} ></span>
+        <span style={{ background: '#7F7FFF' }} onClick={(e) => handleColorSelect('#7F7FFF', e)} ></span>
+        <span style={{ background: '#FF7FFF' }} onClick={(e) => handleColorSelect('#FF7FFF', e)} ></span>
+        <span style={{ background: '#BF7FBF' }} onClick={(e) => handleColorSelect('#BF7FBF', e)} ></span>
+        <span style={{ background: '#3B3B3B' }} onClick={(e) => handleColorSelect('#3B3B3B', e)} ></span>
+        <span style={{ background: '#858585' }} onClick={(e) => handleColorSelect('#858585', e)} ></span>
+        <span style={{ background: '#CFCFCF' }} onClick={(e) => handleColorSelect('#CFCFCF', e)} ></span>
+        <span style={{ background: '#F7F7F7' }} onClick={(e) => handleColorSelect('#F7F7F7', e)} ></span>
       </div>
       <label>Tier's Name</label>
       <textarea value={newTierName} onChange={(e) => setNewTierName(e.target.value)}></textarea>
@@ -49,4 +63,4 @@ function RowForm(props) {
   );
 }
 
-export default RowForm
+export default RowForm;

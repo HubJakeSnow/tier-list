@@ -153,6 +153,10 @@ form {
     border: 2px solid #fff;
 }
 
+#color-selector span.selected {
+    border: 2px solid black;
+}
+
 label {
     margin: 1rem 1rem 0 1rem;
 }
