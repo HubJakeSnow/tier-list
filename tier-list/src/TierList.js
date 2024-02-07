@@ -3,7 +3,7 @@ import Row from './Row'
 import './App.css'
 
 function TierList({ tierData }) {
-    const [tierColor, setTierColor] = useState(['Red', 'Orange', 'Yellow', 'Green', 'Blue']);
+    const [tierColor, setTierColor] = useState(['#FF7F7F', '#FFBF7F', '#FFDF7F', '#FFFF7F', '#BFFF7F']);
 
     // FUNCTION NO LONGER WORKING
     function handleEdit(index) {
