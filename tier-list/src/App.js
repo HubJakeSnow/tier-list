@@ -56,8 +56,8 @@ function App() {
     setIsColumnFormVisible(false);
   };
 
-  const addNewTier = (newTierName, newTierColor) => { // Accept color as argument
-    setTierData([...tierData, { name: newTierName, color: newTierColor }]); // Save tier name and color
+  const addNewTier = (newTierName, newTierColor) => {
+    setTierData([...tierData, { name: newTierName, color: newTierColor }]);
   };
 
   return (
