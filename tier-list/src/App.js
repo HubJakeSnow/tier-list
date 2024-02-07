@@ -11,6 +11,7 @@ function App() {
   const [isRowFormVisible, setIsRowFormVisible] = useState(false);
   const [isColumnFormVisible, setIsColumnFormVisible] = useState(false);
   const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
+  const [tierData, setTierData] = useState(['S', 'A', 'B', 'C', 'D']);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,11 +50,15 @@ function App() {
     setIsColumnFormVisible(false);
   };
 
+  const addNewTier = (newTierName) => {
+    setTierData([...tierData, newTierName]);
+  };
+
   return (
     <>
       <h1 className='title'>Ultimate Tier List</h1>
       {isEditTierFormVisible && <Modal toggleVisibility={toggleEditTierFormVisibility} />}
-      <TierList />
+      <TierList tierData={tierData} />
       <div className='buttons-container'>
         <button
           onClick={toggleRowFormVisibility}
@@ -68,7 +73,7 @@ function App() {
           Add Column
         </button>
       </div>
-      {isRowFormVisible && <RowForm toggleVisibility={toggleRowFormVisibility} />}
+      {isRowFormVisible && <RowForm toggleVisibility={toggleRowFormVisibility} addNewTier={addNewTier} />}
       {isColumnFormVisible && <ColumnForm toggleVisibility={toggleColumnFormVisibility} />}
       <RankingContainer clubData={clubData} />
     </>

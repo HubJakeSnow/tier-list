@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 function RowForm(props) {
   const [newTierName, setNewTierName] = useState('');
 
   function submitForm(e) {
-    if (e) {
-      e.preventDefault();
-    }
-    console.log(`New row added, named: ${newTierName}`);
-    // Additional logic for handling the new tier name
+    e.preventDefault();
+    props.addNewTier(newTierName);
+    setNewTierName('');
   }
 
   return (
-    <form id='add-row-form'>
+    <form id='add-row-form' onSubmit={submitForm}>
       <div className='top-row-container'>
         <h4 className='form-title'>Add A Row</h4>
         <div className='close-form-button' onClick={props.toggleVisibility}>
