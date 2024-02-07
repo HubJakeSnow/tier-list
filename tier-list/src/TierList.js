@@ -6,6 +6,7 @@ function TierList() {
     const [tierData, setTierData] = useState(['S', 'A', 'B', 'C', 'D']);
     const [tierColor, setTierColor] = useState(['Red', 'Orange', 'Yellow', 'Green', 'Blue'])
 
+    // NO LONGER WORKING
     function handleEdit(index) {
         console.log(`${tierData[index]} Tier Clicked!`);
     }

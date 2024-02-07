@@ -38,7 +38,7 @@
 .image-container {
     background-color: #202020;
     flex: 1;
-    height: 80px;
+    min-height: 84px;
 }
 
 .icon-box {
@@ -89,6 +89,7 @@ svg.icon:hover {
 .ranking-images {
     cursor: grab;
     background-color: transparent;
+    margin: 1px;
 }
 
 /* Forms */

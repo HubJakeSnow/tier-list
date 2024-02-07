@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function RankingContainer({ clubData }) {
-  function dragStarted(e,index) {
+  function dragStart(e,index) {
     e.dataTransfer.setData("clubId", index)
   }
 
@@ -13,14 +13,14 @@ function RankingContainer({ clubData }) {
           key={index} 
           id={index}
           src={badgeURL} 
-          style={{ maxWidth: '80px' }}
+          style={{ maxHeight: '80px', width: 'auto' }}
           alt='Images to be ranked'
           draggable
-          onDragStart={(e)=>dragStarted(e,index)}
+          onDragStart={(e)=>dragStart(e,index)}
         />
       ))}
     </div>
   );
 }
 
-export default RankingContainer
+export default RankingContainer;
