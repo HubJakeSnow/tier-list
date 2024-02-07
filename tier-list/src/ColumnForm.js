@@ -10,8 +10,7 @@ function ColumnForm(props) {
           <div className="line"></div>
         </div>
       </div>
-      <div className='color-selector'>Red, Orange, Yellow, Green or Blue</div>
-      <label>Tier's Name</label>
+      <label>Column's Name</label>
       <textarea></textarea>
       <div className='form-button-container'>
         <button className='form-button btn' id='submit-form'>
