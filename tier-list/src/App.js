@@ -11,7 +11,13 @@ function App() {
   const [isRowFormVisible, setIsRowFormVisible] = useState(false);
   const [isColumnFormVisible, setIsColumnFormVisible] = useState(false);
   const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
-  const [tierData, setTierData] = useState(['S', 'A', 'B', 'C', 'D']);
+  const [tierData, setTierData] = useState([
+    { name: 'S', color: '#FF7F7F' },
+    { name: 'A', color: '#FFBF7F' },
+    { name: 'B', color: '#FFDF7F' },
+    { name: 'C', color: '#FFFF7F' },
+    { name: 'D', color: '#BFFF7F' }
+  ]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,8 +56,8 @@ function App() {
     setIsColumnFormVisible(false);
   };
 
-  const addNewTier = (newTierName) => {
-    setTierData([...tierData, newTierName]);
+  const addNewTier = (newTierName, newTierColor) => { // Accept color as argument
+    setTierData([...tierData, { name: newTierName, color: newTierColor }]); // Save tier name and color
   };
 
   return (

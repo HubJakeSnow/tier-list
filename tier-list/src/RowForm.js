@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 function RowForm(props) {
   const [newTierName, setNewTierName] = useState('');
@@ -6,7 +6,7 @@ function RowForm(props) {
 
   function submitForm(e) {
     e.preventDefault();
-    props.addNewTier(newTierName);
+    props.addNewTier(newTierName, newTierColor); // Pass both name and color
     setNewTierName('');
     console.log(newTierColor);
   }
@@ -63,4 +63,4 @@ function RowForm(props) {
   );
 }
 
-export default RowForm;
+export default RowForm

@@ -22,7 +22,7 @@ const Row = ({ tier, tierColor }) => {
 
   return (
     <div className="row-container">
-      <div className="tier-box" style={{ backgroundColor: tierColor }}>
+      <div className="tier-box" style={{ backgroundColor: tierColor }}> {/* Use tierColor as background */}
         {tier}
       </div>
       <div

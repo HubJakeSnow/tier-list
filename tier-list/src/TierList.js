@@ -11,17 +11,17 @@ function TierList({ tierData }) {
     }
 
     return (
-        <div className='tier-list'>
-            {tierData.map((tier, index) => (
-                <Row
-                    key={index}
-                    tier={tier}
-                    tierColor={tierColor[index]}
-                    onEdit={() => handleEdit(index)}
-                />
-            ))}
-        </div>
+      <div className='tier-list'>
+        {tierData.map((tier, index) => (
+          <Row
+            key={index}
+            tier={tier.name}
+            tierColor={tier.color}
+            onEdit={() => handleEdit(index)}
+          />
+        ))}
+      </div>
     );
-};
+  };
 
 export default TierList
