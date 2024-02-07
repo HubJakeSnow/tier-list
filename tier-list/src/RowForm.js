@@ -6,14 +6,12 @@ function RowForm(props) {
 
   function submitForm(e) {
     e.preventDefault();
-    props.addNewTier(newTierName, newTierColor); // Pass both name and color
+    props.addNewTier(newTierName, newTierColor);
     setNewTierName('');
-    console.log(newTierColor);
   }
 
   function handleColorSelect(color, event) {
     setNewTierColor(color);
-    console.log(color);
     
     const spans = document.querySelectorAll('#color-selector span');
     spans.forEach(span => {
