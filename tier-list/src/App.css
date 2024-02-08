@@ -17,16 +17,19 @@
 /* Tier List */
 .tier-list {
     margin: 1rem;
+    border-width: 3px 3px 1px 3px;
+    border-style: solid;
+    border-color: black;
+    padding: 0;
 }
 
 /* Rows */
 .row-container {
-    border: 1px solid black;
+    border-bottom: 2px solid black;
     display: flex;
 }
 
 .tier-box {
-    border: 1px solid black;
     width: 100px;
     font-size: 16px;
     font-weight: 600;
