@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function EditTierForm(props) {
-  const [newTierName, setNewTierName] = useState('');
-  const [newTierColor, setNewTierColor] = useState('');
+  const [newTierName, setNewTierName] = React.useState('');
+  const [newTierColor, setNewTierColor] = React.useState('');
 
   function handleColorSelect(color, event) {
     setNewTierColor(color);
@@ -23,6 +23,15 @@ function EditTierForm(props) {
   function handleDeletion(e) {
     e.preventDefault();
     console.log("Row deleted");
+    const rowContainer = e.target.closest('.row-container');
+    const images = rowContainer.querySelectorAll('.ranking-images');
+    const rankingContainer = document.querySelector('.ranking-container');
+
+    images.forEach(image => {
+      rankingContainer.appendChild(image);
+    });
+
+    rowContainer.remove();
   }
 
   return (

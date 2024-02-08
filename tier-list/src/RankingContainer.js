@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function RankingContainer({ clubData }) {
   function dragStart(e,index) {
@@ -23,4 +23,4 @@ function RankingContainer({ clubData }) {
   );
 }
 
-export default RankingContainer;
+export default RankingContainer
