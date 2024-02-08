@@ -6,16 +6,23 @@ function EditTierForm(props) {
 
   function handleColorSelect(color, event) {
     setNewTierColor(color);
-    console.log(color)
-    console.log(newTierName)
 
-    
     const spans = document.querySelectorAll('#color-selector span');
     spans.forEach(span => {
       span.classList.remove('selected');
     });
   
     event.target.classList.add('selected');
+  }
+
+  function handleEdit(e) {
+    e.preventDefault();
+    props.onSubmit(newTierName, newTierColor);
+  }
+
+  function handleDeletion(e) {
+    e.preventDefault();
+    console.log("Row deleted");
   }
 
   return (
@@ -47,10 +54,10 @@ function EditTierForm(props) {
       <label>Tier's Name</label>
       <textarea value={newTierName} onChange={(e) => setNewTierName(e.target.value)}></textarea>
       <div className='form-button-container'>
-        <button className='form-button btn' id='submit-form'>
+        <button className='form-button btn' id='submit-form' onClick={handleEdit}>
           Edit Row
         </button>
-        <button className='form-button btn' id='cancel-form'>
+        <button className='form-button btn' id='cancel-form' onClick={handleDeletion}>
           Delete Row
         </button>
       </div>

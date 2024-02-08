@@ -1,10 +1,10 @@
 import React from 'react'
 import EditTierForm from './EditTierForm'
 
-function Modal(props) {
+function Modal({ toggleVisibility, onSubmit }) {
   return (
     <div id='modal'>
-      <EditTierForm toggleVisibility={props.toggleVisibility} />
+      <EditTierForm toggleVisibility={toggleVisibility} onSubmit={onSubmit} />
     </div>
   );
 }

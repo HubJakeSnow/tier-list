@@ -4,6 +4,8 @@ import Modal from './Modal'
 
 const Row = ({ tier, tierColor }) => {
   const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
+  const [tierName, setTierName] = useState(tier);
+  const [currentTierColor, setCurrentTierColor] = useState(tierColor);
 
   function draggingOver(e) {
     e.preventDefault();
@@ -20,10 +22,16 @@ const Row = ({ tier, tierColor }) => {
     setIsEditTierFormVisible(!isEditTierFormVisible);
   };
 
+  function handleFormSubmit(newName, newColor) {
+    setTierName(newName);
+    setCurrentTierColor(newColor);
+    toggleEditTierFormVisibility();
+  }
+
   return (
     <div className="row-container">
-      <div className="tier-box" style={{ backgroundColor: tierColor }}> {/* Use tierColor as background */}
-        {tier}
+      <div className="tier-box" style={{ backgroundColor: currentTierColor }}>
+        {tierName}
       </div>
       <div
         onDragOver={(e) => draggingOver(e)}
@@ -33,8 +41,7 @@ const Row = ({ tier, tierColor }) => {
       <div className="icon-box" onClick={toggleEditTierFormVisibility}>
         <FaCog className="icon" style={{ backgroundColor: 'black' }} size={40} />
       </div>
-      {isEditTierFormVisible && <Modal toggleVisibility={toggleEditTierFormVisibility} />}
-
+      {isEditTierFormVisible && <Modal toggleVisibility={toggleEditTierFormVisibility} onSubmit={handleFormSubmit} />}
     </div>
   );
 };
