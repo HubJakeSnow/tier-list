@@ -1,22 +1,12 @@
 import React, { useState } from 'react'
 import { FaCog } from 'react-icons/fa'
 import Modal from './Modal'
+import Column from './Column';
 
 const Row = ({ tier, tierColor }) => {
   const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
   const [tierName, setTierName] = useState(tier);
   const [currentTierColor, setCurrentTierColor] = useState(tierColor);
-
-  function draggingOver(e) {
-    e.preventDefault();
-  };
-
-  function dragDropped(e) {
-    e.preventDefault();
-    let transferedClubId = e.dataTransfer.getData('clubId');
-    const droppedImage = document.getElementById(transferedClubId);
-    e.target.appendChild(droppedImage);
-  };
 
   function toggleEditTierFormVisibility() {
     setIsEditTierFormVisible(!isEditTierFormVisible);
@@ -33,11 +23,8 @@ const Row = ({ tier, tierColor }) => {
       <div className="tier-box" style={{ backgroundColor: currentTierColor }}>
         {tierName}
       </div>
-      <div
-        onDragOver={(e) => draggingOver(e)}
-        onDrop={(e) => dragDropped(e)}
-        className="image-container"
-      ></div>
+      <Column />
+      <Column />
       <div className="icon-box" onClick={toggleEditTierFormVisibility}>
         <FaCog className="icon" style={{ backgroundColor: 'black' }} size={40} />
       </div>
