@@ -205,6 +205,11 @@ textarea {
     display: none;
 }
 
+/* Modal */
+body.modal-open {
+    overflow: hidden;
+}
+
 #modal {
     position: absolute;
     right: auto;
@@ -213,3 +218,4 @@ textarea {
     height: 100%;
     top: 100px;
 }
+
