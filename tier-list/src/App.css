@@ -47,7 +47,6 @@
     min-width: 90px;
     min-height: 88px;
     padding: 2px 3px 0 3px;
-    align-items: flex-start;
 }
 
 .icon-box {
@@ -225,4 +224,3 @@ body.modal-open {
     height: 100%;
     top: 100px;
 }
-
