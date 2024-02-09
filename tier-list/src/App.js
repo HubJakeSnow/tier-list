@@ -3,20 +3,18 @@ import axios from 'axios'
 import TierList from './TierList'
 import RankingContainer from './RankingContainer'
 import RowForm from './RowForm'
-import ColumnForm from './ColumnForm'
 import Modal from './Modal'
 
 function App() {
   const [clubData, setClubData] = useState([]);
   const [isRowFormVisible, setIsRowFormVisible] = useState(false);
-  const [isColumnFormVisible, setIsColumnFormVisible] = useState(false);
   const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
   const [tierData, setTierData] = useState([
-    { name: 'S', color: '#FF7F7F' },
-    { name: 'A', color: '#FFBF7F' },
-    { name: 'B', color: '#FFDF7F' },
-    { name: 'C', color: '#FFFF7F' },
-    { name: 'D', color: '#BFFF7F' }
+    { name: 'S', color: '#FF7F7F', columns: [{ id: 1 }] },
+    { name: 'A', color: '#FFBF7F', columns: [{ id: 1 }] },
+    { name: 'B', color: '#FFDF7F', columns: [{ id: 1 }] },
+    { name: 'C', color: '#FFFF7F', columns: [{ id: 1 }] },
+    { name: 'D', color: '#BFFF7F', columns: [{ id: 1 }] }
   ]);
 
   useEffect(() => {
@@ -40,24 +38,26 @@ function App() {
 
   const toggleRowFormVisibility = () => {
     setIsRowFormVisible(!isRowFormVisible);
-    setIsColumnFormVisible(false);
-    setIsEditTierFormVisible(false);
-  };
-
-  const toggleColumnFormVisibility = () => {
-    setIsColumnFormVisible(!isColumnFormVisible);
-    setIsRowFormVisible(false);
     setIsEditTierFormVisible(false);
   };
 
   const toggleEditTierFormVisibility = () => {
     setIsEditTierFormVisible(!isEditTierFormVisible);
     setIsRowFormVisible(false);
-    setIsColumnFormVisible(false);
   };
 
   const addNewTier = (newTierName, newTierColor) => {
-    setTierData([...tierData, { name: newTierName, color: newTierColor }]);
+    setTierData([...tierData, { name: newTierName, color: newTierColor, columns: [{ id: 1 }] }]);
+  };
+
+  const addColumn = () => {
+    console.log("Column added to all rows");
+    setTierData(prevTierData => {
+      return prevTierData.map(tier => ({
+        ...tier,
+        columns: [...tier.columns, { id: Math.random() }]
+      }));
+    });
   };
 
   return (
@@ -73,14 +73,13 @@ function App() {
           Add Row
         </button>
         <button
-          onClick={toggleColumnFormVisibility}
+          onClick={addColumn}
           className='btn add-column'
         >
           Add Column
         </button>
       </div>
       {isRowFormVisible && <RowForm toggleVisibility={toggleRowFormVisibility} addNewTier={addNewTier} />}
-      {isColumnFormVisible && <ColumnForm toggleVisibility={toggleColumnFormVisibility} />}
       <RankingContainer clubData={clubData} />
     </>
   );

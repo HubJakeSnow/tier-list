@@ -1,27 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Row from './Row'
 import './App.css'
 
-function TierList({ tierData }) {
-    const [tierColor, setTierColor] = useState(['#FF7F7F', '#FFBF7F', '#FFDF7F', '#FFFF7F', '#BFFF7F']);
-
-    // FUNCTION NO LONGER WORKING
-    function handleEdit(index) {
-        console.log(`${tierData[index]} Tier Clicked!`);
-    }
-
-    return (
-      <div className='tier-list'>
-        {tierData.map((tier, index) => (
-          <Row
-            key={index}
-            tier={tier.name}
-            tierColor={tier.color}
-            onEdit={() => handleEdit(index)}
-          />
-        ))}
-      </div>
-    );
-  };
+const TierList = ({ tierData }) => {
+  return (
+    <div className='tier-list'>
+      {tierData.map((tier, index) => (
+        <Row
+          key={index}
+          tier={tier.name}
+          tierColor={tier.color}
+          columns={tier.columns}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default TierList

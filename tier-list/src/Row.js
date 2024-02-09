@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
+import Column from './Column'
 import { FaCog } from 'react-icons/fa'
 import Modal from './Modal'
-import Column from './Column';
 
-const Row = ({ tier, tierColor }) => {
+const Row = ({ tier, tierColor, columns }) => {
   const [isEditTierFormVisible, setIsEditTierFormVisible] = useState(false);
   const [tierName, setTierName] = useState(tier);
   const [currentTierColor, setCurrentTierColor] = useState(tierColor);
 
   function toggleEditTierFormVisibility() {
     setIsEditTierFormVisible(!isEditTierFormVisible);
-  };
+  }
 
   function handleFormSubmit(newName, newColor) {
     setTierName(newName);
@@ -23,8 +23,9 @@ const Row = ({ tier, tierColor }) => {
       <div className="tier-box" style={{ backgroundColor: currentTierColor }}>
         {tierName}
       </div>
-      <Column />
-      <Column />
+      {columns.map((column, index) => (
+        <Column key={index} />
+      ))}
       <div className="icon-box" onClick={toggleEditTierFormVisibility}>
         <FaCog className="icon" style={{ backgroundColor: 'black' }} size={40} />
       </div>
