@@ -51,7 +51,6 @@ function App() {
   };
 
   const addColumn = () => {
-    console.log("Column added to all rows");
     setTierData(prevTierData => {
       return prevTierData.map(tier => ({
         ...tier,
