@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function Column() {
   function draggingOver(e) {
@@ -20,4 +20,4 @@ function Column() {
   );
 };
 
-export default Column;
+export default Column
